@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "e5e80d52-993b-4235-95e2-4f905c5c142b",
+		"name": "sos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31386869",
+		"_collection_link": "https://lively-moon-514555.postman.co/workspace/My-Workspace~78ea021a-8990-43c4-8a9f-af743db5341f/collection/31386869-e5e80d52-993b-4235-95e2-4f905c5c142b?action=share&source=collection_link&creator=31386869"
+	},
+	"item": [
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\" : \"PENDIENTE\",\r\n    \"products\" : [\r\n        {\r\n            \"nombre\" : \"jabon\",\r\n            \"precio\" : 1000\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ESTADO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\" : \"PENDIENTE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos/4/estado"
+			},
+			"response": []
+		},
+		{
+			"name": "cancelar pedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\" : \"COMPLETADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos/4"
+			},
+			"response": []
+		},
+		{
+			"name": "get pedido",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos/PENDIENTE"
+			},
+			"response": []
+		},
+		{
+			"name": "get pedidos estado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos/status/PENDIENTE"
+			},
+			"response": []
+		},
+		{
+			"name": "get pedidos fechas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaInicio\": \"2024-11-20T00:00:00\",\r\n    \"fechaFin\" : \"2024-11-25T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pedidos/between-dates"
+			},
+			"response": []
+		}
+	]
+}
